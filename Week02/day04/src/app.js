@@ -1,4 +1,5 @@
 import moment from 'moment';
+import './../style.css'
 var ball = require('./new.js');
 
 console.log(moment().format('LTS'));
