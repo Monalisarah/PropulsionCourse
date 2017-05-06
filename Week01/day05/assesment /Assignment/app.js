@@ -42,8 +42,8 @@ Game.prototype.play = function() {
     that.paddleRight.render(context);
     that.paddleLeft.render(context);
 
-    that.paddleRight.move(that.canvasH);
-    that.paddleLeft.move(that.canvasH);
+    that.paddleRight.move();
+    that.paddleLeft.move();
 
   }, 10);
 }
