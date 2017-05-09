@@ -1,0 +1,10 @@
+
+
+public class HelloJUnit {
+	
+	// name it the thing you are testing tests 
+	public void firstTest(){
+		assertTrue(2*2 == 4)
+	}
+
+}

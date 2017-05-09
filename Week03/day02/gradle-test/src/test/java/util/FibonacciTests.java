@@ -1,0 +1,15 @@
+package util;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class FibonacciTests {
+
+	@Test
+	public void testHappyPath() {
+		assertEquals(0, Fibonacci.fibonacci(0));
+		assertEquals(13, Fibonacci.fibonacci(7));
+	}
+
+}

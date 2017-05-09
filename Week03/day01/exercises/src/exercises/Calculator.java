@@ -4,8 +4,10 @@ public class Calculator {
 	
 	double result = 0;
 
-	public double getResult() {
+	public double getResult() {  // public void getResult() {
+		// system.out.println(result);
 		return result;
+		
 	}
 	public void add(double x){
 		this.result = result + x;

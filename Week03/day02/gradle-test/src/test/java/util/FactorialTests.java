@@ -1,0 +1,32 @@
+package util;
+
+import static org.junit.Assert.*;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import util.Factorial;
+
+public class FactorialTests {
+	
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+	
+	@Test
+	public void testHappyPath() {
+		assertEquals(120, Factorial.factorial(5), 0);
+		assertEquals(720, Factorial.factorial(6), 0);
+		assertEquals(5040, Factorial.factorial(7),0);
+		assertEquals(1, Factorial.factorial(0),0);
+		
+	}
+	
+	@Test
+	public void testEdgeCase() {
+		exception.expect(IllegalArgumentException.class);
+		Factorial.factorial(-1);
+		// if the test throws an exception it exits the method
+		
+	}
+}

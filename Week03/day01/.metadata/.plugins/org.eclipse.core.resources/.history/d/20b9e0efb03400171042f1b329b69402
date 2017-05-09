@@ -1,0 +1,20 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import util.Factorial;
+
+public class FactorialTests {
+
+	@Test
+	public void test() {
+		assertEquals(120, Factorial.factorial(5), 0);
+		assertEquals(720, Factorial.factorial(6), 0);
+		assertEquals(5040, Factorial.factorial(7),0);
+		assertEquals(1, Factorial.factorial(0),0);
+		
+	}
+	
+	
+
+}

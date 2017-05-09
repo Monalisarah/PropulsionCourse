@@ -1,0 +1,20 @@
+package exercises;
+
+import java.util.Scnanner;
+
+public class BmiCalculator {
+	
+	public static void main(String[] args) {
+		System.out.println("Let's calculate your BMI (kg/m^2");
+		System.out.println();
+		
+		// scanner
+		
+		System.out.println("What is your weight in kilograms?");
+		double weight = scannre.nextDouble();
+		scanner.nextline();
+		
+		System.out.println();
+	}
+
+}

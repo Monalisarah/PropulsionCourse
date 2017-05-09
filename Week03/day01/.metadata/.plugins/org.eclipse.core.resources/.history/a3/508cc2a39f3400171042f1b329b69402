@@ -1,0 +1,17 @@
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class HelloJUnit {
+	
+	// name it the thing you are testing tests 
+	public void firstTest(){
+		assertTrue(2*2 == 4);
+		assertFalse("2*2 == 10", 2*2==10);
+		boolean bool = true;
+		assertTrue(bool);
+		assertEquals(2*2, 4);
+	}
+
+}
