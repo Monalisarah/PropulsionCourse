@@ -1,0 +1,8 @@
+package exercises;
+
+public class MathUtils {
+	public static int squared(int x){
+		return x*x;
+	}
+
+}

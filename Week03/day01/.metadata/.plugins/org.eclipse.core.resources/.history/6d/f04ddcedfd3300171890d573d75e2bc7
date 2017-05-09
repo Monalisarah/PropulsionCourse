@@ -1,0 +1,36 @@
+
+
+public class Point {
+	//properties of the class
+	public static final String COLOR = "black";
+
+	private final int x;
+	private final int y;
+	
+	//constructor default
+	private Point() {
+		this.x = 0;
+		this.y = 0;
+	}
+	// constructor with two parameters, initializing both properties
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public int getX() {
+		return this.x;
+	}
+
+	public int getY() {
+		return this.y;
+	}
+
+	@Override
+	public String toString() {
+		return "(" + this.x + ", " + this.y + ")";
+	}
+
+}
+
+

@@ -1,0 +1,29 @@
+package exercises;
+
+public class Calculator {
+	
+	double result = 0;
+
+	public double getResult() {
+		return result;
+	}
+	public void add(double x){
+		result = result + x;
+	}
+	
+	public void subtract(double x){
+		result = result - x;
+	}
+	
+	public void multiply(double x){
+		result = result *x;
+	}
+	
+	public void divide(double x){
+		result = result/x;
+	}
+	
+	public void clear(){
+		result = 0;
+	}
+}

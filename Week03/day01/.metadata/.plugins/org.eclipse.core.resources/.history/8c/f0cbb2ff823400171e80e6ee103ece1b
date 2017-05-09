@@ -1,0 +1,8 @@
+package exercises;
+
+public class Calculator {
+	
+	double result = 0;
+
+
+}

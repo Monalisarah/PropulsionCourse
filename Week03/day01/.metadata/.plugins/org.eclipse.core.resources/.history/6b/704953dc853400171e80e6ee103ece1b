@@ -1,0 +1,10 @@
+package exercises;
+
+public class CalculatorDemo {
+	public static void main(String[] args) {
+		
+	Calculator myCalculator = new Calculator ();
+	myCalculator.add(2.5);
+	System.out.print(myCalculator.result);	
+	}
+}

@@ -1,0 +1,13 @@
+
+public class EvenOrOdd {
+
+	public static boolean isEven(int num){
+		return false;
+		
+	}
+//	public static void main(string[] args){
+	public static void main(string... args){	
+		System.out.println("Even?" + isEven(9));
+	}
+	
+}
