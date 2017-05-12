@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class GreetingApp {
+
+	public static void main(String[] args) {
+		// this is what we are going to execute
+		MessageService messageService1 = new GermanMessageService();
+		MessageService messageService2 = new EnglishMessageService();
+		
+		//create an instance of Scanner
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("What's your name? Beziehungsweise wie heisst du?");
+		String name = scanner.nextLine();
+		
+	}
+}

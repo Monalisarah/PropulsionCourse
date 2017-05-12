@@ -1,0 +1,16 @@
+package MultidimensionalArrays;
+
+public class MultidimensionalArray {
+
+	 static int[][] grid = new int[10][10];
+			for (int i = 0; i < array.length; i++) {
+				System.out.println(Arrays.toString(array[i]));
+			}
+		}
+	 
+	 public static void main(String[] args) {
+		System.out.println(grid);
+	
+	}
+	 
+}

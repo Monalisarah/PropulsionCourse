@@ -1,0 +1,27 @@
+package TweetService;
+
+import java.util.*; // imports everything within java util
+
+public class TweetService {
+	
+	protected Map<String, Tweet > database = new HashMap <>();
+	
+	
+	protected void save(Tweet tweet){
+		database.put(tweet.id, tweet);
+	}
+	
+	protected void delete(String id){
+		database.remove(id);
+	}
+	
+	protected Tweet findById(String id){
+	Tweet found = database.get(id);
+	return found;
+	}
+	
+	protected List<Tweet> findAll(){
+		return new ArrayList<>(database.values());
+	}
+
+}

@@ -1,0 +1,15 @@
+package TweetService;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TeetService {
+	
+	protected Map<String, Tweet > database = new HashMap <>();
+	
+	
+	protected void save(Tweet tweet){
+		database.put(tweet.id, tweet);
+	}
+
+}

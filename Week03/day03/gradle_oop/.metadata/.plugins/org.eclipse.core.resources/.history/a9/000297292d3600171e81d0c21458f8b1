@@ -1,0 +1,14 @@
+package Enum;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PriceCalculatorTest {
+
+	@Test
+	public void test() {
+		assertEquals(expected, actual, delta);;
+	}
+
+}

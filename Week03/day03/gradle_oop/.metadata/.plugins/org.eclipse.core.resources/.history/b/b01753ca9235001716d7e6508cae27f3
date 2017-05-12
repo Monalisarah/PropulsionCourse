@@ -1,0 +1,8 @@
+
+public class GreetingClient {
+ 
+	// fields or properties
+	private MessageService messageService;      // MessageService is the type and messageService is the name of the property or the field
+	
+	
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/Simona/Documents/01Dokumente/03Privat/Weiterbildung/PropulsionAcademy/PropulsionCourse/Week03/day03/gradle_oop/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2388448880.index
+1458742597.index
+175479199.index
+3169636596.index
+2502070037.index
+1466704642.index

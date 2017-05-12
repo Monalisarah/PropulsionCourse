@@ -1,0 +1,16 @@
+package Enums;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PriceCalculatorTest {
+
+	@Test
+	public void calculatePriceTest() {
+		Product tShirt = new Product("tshirt",RED,XL,20)
+		
+		assertEquals(expected, actual, delta);;
+	}
+
+}

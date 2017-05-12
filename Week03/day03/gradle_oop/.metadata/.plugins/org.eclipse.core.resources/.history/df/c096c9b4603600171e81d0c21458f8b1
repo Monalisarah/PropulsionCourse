@@ -1,0 +1,17 @@
+package TweetService;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TweetServiceTest {
+
+	//initalize the 
+	
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

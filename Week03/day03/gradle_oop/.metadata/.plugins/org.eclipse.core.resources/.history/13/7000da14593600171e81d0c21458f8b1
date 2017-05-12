@@ -1,0 +1,14 @@
+package TweetService;
+
+public class Tweet {
+	
+	//fields
+	public String id = java.util.UUID.randomUUID().toString();
+	public String text;
+	
+	
+
+
+
+}
+

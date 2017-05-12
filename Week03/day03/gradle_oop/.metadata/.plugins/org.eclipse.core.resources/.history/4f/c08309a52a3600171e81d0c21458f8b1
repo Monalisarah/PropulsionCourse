@@ -1,0 +1,8 @@
+package Enums;
+
+public class PriceCalculator {
+
+	double calculatePrice(Product){
+	return this.price + this.price
+	}
+}

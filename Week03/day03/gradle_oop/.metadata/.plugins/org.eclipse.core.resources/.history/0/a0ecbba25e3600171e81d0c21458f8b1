@@ -1,0 +1,29 @@
+package TweetService;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class TeetService {
+	
+	protected Map<String, Tweet > database = new HashMap <>();
+	
+	
+	protected void save(Tweet tweet){
+		database.put(tweet.id, tweet);
+	}
+	
+	protected void delete(String id){
+		database.remove(id);
+	}
+	
+	protected Tweet findById(String id){
+	Tweet found = database.get(id);
+	return found;
+	}
+	
+	protected List<Tweet> findAll(List<Tweet> tweet){
+		return tweet;
+	}
+
+}

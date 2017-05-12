@@ -1,0 +1,5 @@
+package OddsandEnds;
+
+public interface Animal {
+
+}

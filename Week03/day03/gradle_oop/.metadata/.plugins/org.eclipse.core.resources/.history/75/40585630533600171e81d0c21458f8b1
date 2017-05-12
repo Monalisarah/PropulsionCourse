@@ -1,0 +1,30 @@
+package ExceptionHandling;
+
+import java.io.IOException;
+
+public class ExceptionHandlingDemo {
+
+	public static void main(String[] args) {
+		
+		try {
+			System.out.println("Vorher");
+			throwIOExeption();
+			System.out.println("Nacher");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Vor dem catch");
+			e.printStackTrace();
+			System.out.println("Nach dem catch");
+		}
+//		throwIllegalArgumentException();
+//		throwTrhowable();
+//		throwAssertionError();
+		
+	}
+
+	private static void throwIOExeption() throws IOException {
+		throw new IOException("My message here");	
+	}
+	
+	
+}

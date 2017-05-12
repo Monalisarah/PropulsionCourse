@@ -1,0 +1,14 @@
+package TweetService;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TeetService {
+	
+	public static void main(String[] args) {
+		Map<String, Tweet > database = new HashMap <>();
+	}
+	
+	
+
+}

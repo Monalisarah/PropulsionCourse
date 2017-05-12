@@ -1,0 +1,40 @@
+package Enums;
+
+import org.assertj.core.internal.Strings;
+
+public class Product {
+
+	public String name;
+	public Color color;
+	public Size size;
+	public int price;
+	
+	public Product(String name, Color color, Size size, int price) {
+		
+		this.name = name;
+		this.color = color;
+		this.size = size;
+		this.price = price;
+		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public Size getSize() {
+		return size;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	
+	
+	
+	
+}

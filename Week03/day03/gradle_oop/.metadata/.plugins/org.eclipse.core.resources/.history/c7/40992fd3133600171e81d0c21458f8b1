@@ -1,0 +1,31 @@
+package Person_Pet;
+
+public class Person implements Animal {
+	
+	// (variables) fields
+	
+	private final String firstName;
+	private final String lastName;
+	private final int age;
+	
+	// constructors
+	public Person(String firstName, String lastName, int age) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+
+	@Override
+	public String speak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+
+

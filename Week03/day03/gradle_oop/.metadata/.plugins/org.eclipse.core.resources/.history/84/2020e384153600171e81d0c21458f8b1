@@ -1,0 +1,5 @@
+package Person_Pet;
+
+public interface Animal {
+
+}

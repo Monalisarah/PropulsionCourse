@@ -1,0 +1,5 @@
+package abstractMessage;
+
+public class AbstractMessageService {
+
+}

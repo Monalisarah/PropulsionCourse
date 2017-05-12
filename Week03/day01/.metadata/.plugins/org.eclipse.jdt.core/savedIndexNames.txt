@@ -1,12 +1,6 @@
 INDEX VERSION 1.130+/Users/Simona/Documents/01Dokumente/03Privat/Weiterbildung/PropulsionAcademy/PropulsionCourse/Week03/day01/.metadata/.plugins/org.eclipse.jdt.core
-1870329046.index
 3027528980.index
 860625541.index
-117435994.index
-3242643525.index
+1270394131.index
 1373609347.index
-333303409.index
-2403277737.index
 1338825950.index
-2201416396.index
-3207950025.index

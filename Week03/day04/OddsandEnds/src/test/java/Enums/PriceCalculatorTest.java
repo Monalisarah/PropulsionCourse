@@ -1,0 +1,18 @@
+package Enums;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PriceCalculatorTest {
+
+	@Test
+	public void calculatePriceTest() {
+		Product tShirt = new Product("tshirt",Color.RED,Size.XL,20);
+		//assertEquals(21, PriceCalculator.calculatePrice(tShirt), 0);
+		PriceCalculator priceCalculator = new PriceCalculator();
+		assertEquals(21, priceCalculator.calculatePrice(tShirt), 0);
+	}
+
+}
+

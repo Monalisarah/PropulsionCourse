@@ -1,0 +1,18 @@
+package demo;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class GenericsDemo {
+	
+	public static void main(String[] args) {
+		List<Number> numbers = new ArrayList<>();
+		
+		Number num1 = new Integer(42);
+		numbers.add(num1);
+		numbers.add(new Double(3.14159));
+		
+		
+	}
+
+}

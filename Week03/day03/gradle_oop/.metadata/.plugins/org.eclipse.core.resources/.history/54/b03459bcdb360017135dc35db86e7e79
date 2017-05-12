@@ -1,0 +1,27 @@
+package TweetService;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TweetServiceTest {
+
+	//initalize the 
+	private TweetService myTweetService = new TweetService();
+	
+	private Tweet myTweet01 = new Tweet("hallo yusef");
+	
+	
+	@Test
+	public void testSave() {
+		myTweetService.save(myTweet01);
+		Tweet mymessage = myTweetService.findById(myTweet01.id);
+		assertEquals(myTweet01.text, mymessage.text);
+	}	
+		
+	
+//	myTweetService.delete(myTweet01.id);
+//		assertEquals(null, myTweetService.findById(myTweet01.id));
+	
+
+}

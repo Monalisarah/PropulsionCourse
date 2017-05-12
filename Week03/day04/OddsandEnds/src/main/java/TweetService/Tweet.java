@@ -1,0 +1,18 @@
+package TweetService;
+
+public class Tweet{
+	
+	//fields
+	protected final String id = java.util.UUID.randomUUID().toString();
+	protected final String text;
+	
+	// constructor
+	public Tweet (String text){
+		this.text = text;
+		
+	}
+	
+	
+	
+}
+

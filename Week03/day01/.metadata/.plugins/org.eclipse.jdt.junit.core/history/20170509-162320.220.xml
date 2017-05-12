@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="util" project="gradle-test" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="util.FactorialTests" time="0.0">
-    <testcase name="testEdgeCase" classname="util.FactorialTests" time="0.0"/>
-    <testcase name="testHappyPath" classname="util.FactorialTests" time="0.0"/>
-  </testsuite>
-  <testsuite name="util.FibonacciTests" time="0.0">
-    <testcase name="testHappyPath" classname="util.FibonacciTests" time="0.0"/>
-  </testsuite>
-</testrun>

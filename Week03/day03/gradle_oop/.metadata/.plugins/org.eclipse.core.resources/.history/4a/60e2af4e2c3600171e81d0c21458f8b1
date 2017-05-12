@@ -1,0 +1,14 @@
+package Enums;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class EnumsTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

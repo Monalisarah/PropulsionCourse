@@ -1,0 +1,17 @@
+package test.java;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class MessageServiceTest {
+	
+	public MessageService messageServiceTest;
+
+	@Test
+	public void englishMessageService() {
+		
+	}
+
+}

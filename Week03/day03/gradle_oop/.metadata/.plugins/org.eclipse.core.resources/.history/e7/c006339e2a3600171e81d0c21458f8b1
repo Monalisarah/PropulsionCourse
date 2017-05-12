@@ -1,0 +1,24 @@
+package Enums;
+
+public enum Size {
+	
+	S, M, L, XL, XXL;
+	
+	
+	public double getSurchargePercentage(){
+		switch(this){
+		case XL:
+			return 0.05;
+		case XXL:
+			return 0.1;
+		default:
+			return 0;
+		}
+		
+	}
+	
+	
+	
+}
+
+

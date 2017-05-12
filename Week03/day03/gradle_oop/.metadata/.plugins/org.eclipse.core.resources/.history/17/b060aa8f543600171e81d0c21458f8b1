@@ -1,0 +1,35 @@
+package ExceptionHandling;
+
+import java.io.IOException;
+
+public class ExceptionHandlingDemo {
+
+	public static void main(String[] args) {
+		
+//		TRY {
+//			SYSTEM.OUT.PRINTLN("VOR");
+//			THROWIOEXEPTION();
+//			SYSTEM.OUT.PRINTLN("NACH  DER IOEX");
+//		} CATCH (IOEXCEPTION E) {
+//			// TODO AUTO-GENERATED CATCH BLOCK
+//			SYSTEM.OUT.PRINTLN("VOR DEM CATCH DER IOEX");
+//			E.PRINTSTACKTRACE();
+//			SYSTEM.OUT.PRINTLN("NACH DEM CATCH DER IOEX");
+//		}
+		
+		throwIllegalArgumentException();
+		
+//		throwTrhowable();
+//		throwAssertionError();
+		
+	}
+
+	private static void throwIOExeption() throws IOException {
+		throw new IOException("My message here");	
+	}
+	
+	private static void throwIllegalArgumentException() throws IllegalArgumentException{
+		throw new IllegalArgumentException("Simona is here");
+	}
+	
+}
