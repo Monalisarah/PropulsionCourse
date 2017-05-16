@@ -1,0 +1,5 @@
+package Uebungen;
+
+public interface IConfig {
+	void LoadVar();
+}

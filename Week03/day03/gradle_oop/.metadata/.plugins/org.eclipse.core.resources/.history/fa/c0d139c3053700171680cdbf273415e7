@@ -1,0 +1,19 @@
+package Bank;
+
+public class Account {
+	
+	protected String id;
+	protected double balance;
+	protected Customer customer;
+	
+	
+	protected void credit (double amount){
+		this.balance = this.balance + amount;
+	}
+	
+	protected void debit (double amount){
+		this.balance = this.balance -amount;
+	
+	}
+	
+}

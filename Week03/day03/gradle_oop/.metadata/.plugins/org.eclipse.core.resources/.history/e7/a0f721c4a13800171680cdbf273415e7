@@ -1,0 +1,11 @@
+package Uebungen;
+
+public class Auto extends Fahrzeug {
+ 
+	int maxGeschwindigkeit = 160;
+	
+	public void BegrenzeGeschwindigkeit(int max) {
+		maxGeschwindigkeit = max;
+	}
+	
+}

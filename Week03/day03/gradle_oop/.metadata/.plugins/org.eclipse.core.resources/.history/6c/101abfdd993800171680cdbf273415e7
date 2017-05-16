@@ -1,0 +1,21 @@
+package Uebungen;
+
+public class Fahrzeug {
+
+	Sitz vorderSitz = new Sitz();
+	Sitz hinterSitz = new Sitz();
+	
+	public void Fahren() {
+		vorderSitz.Einstellen();
+	}
+	
+	private class Sitz {
+		public void Einstellen() {
+			
+		}
+		
+		public void Heizen() {
+			
+		}
+	}
+}

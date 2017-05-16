@@ -1,0 +1,3 @@
+INDEX VERSION 1.130+/Users/Simona/Documents/01Dokumente/03Privat/Weiterbildung/PropulsionAcademy/fswd-2017-04/java-01-fundamentals/day5/solutions/bank/.metadata/.plugins/org.eclipse.jdt.core
+2366691359.index
+2698073251.index

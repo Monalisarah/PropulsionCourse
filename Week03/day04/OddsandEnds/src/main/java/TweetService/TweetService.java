@@ -5,6 +5,7 @@ import java.util.*; // imports everything within java util
 public class TweetService {
 	
 	protected Map<String, Tweet > database = new HashMap <>();
+	// Hash Map does not list the order LinkedHashMap lists in order
 	
 	
 	protected void save(Tweet tweet){

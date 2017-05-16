@@ -1,0 +1,22 @@
+package person_Pet;
+
+public class Pet extends Object implements IAnimal {
+
+	@Override
+	public String speak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getName();
+	}
+
+}

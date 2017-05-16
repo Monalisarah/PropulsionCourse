@@ -1,0 +1,7 @@
+package Uebungen;
+
+public class Config implements IConfig {
+    public void LoadVar() {
+    	// DB Zugriff
+    }
+}

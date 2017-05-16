@@ -1,0 +1,17 @@
+package Bank;
+
+public class CustomerAccountDemo {
+	public static void main(String[] args) {
+		Customer cs = new Customer("Anna");
+		Account ac = new Account(cs);
+		//ac.setCustomer(cs);
+		//cs.setAccount(ac);
+		
+		cs.setAccount(ac);
+		
+		System.out.println(cs);
+		System.out.println(ac);
+		System.out.println(new BankService());
+	}
+
+}

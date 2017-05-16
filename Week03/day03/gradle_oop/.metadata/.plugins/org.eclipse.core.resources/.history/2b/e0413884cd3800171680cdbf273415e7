@@ -1,0 +1,32 @@
+package Bank;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class BankService {
+	Map<String, Customer> database = new HashMap<>();
+	
+	public void save(Customer customer){
+		String id = customer.getId();
+		database.put(id, customer);
+	}
+	
+//	public void deleteById(String id){
+//		String id = customer.getId();
+//		database.remove(id);
+//	}
+
+
+	
+	
+	public List<Customer> findAll(){
+//		List<Customer> allCustomers = new ArrayList<Customer>(this.database.values());
+		return new ArrayList<>(this.database.values());
+		
+	}
+	
+	
+}
+

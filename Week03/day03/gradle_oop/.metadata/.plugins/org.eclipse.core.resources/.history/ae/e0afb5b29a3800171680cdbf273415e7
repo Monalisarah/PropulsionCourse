@@ -1,0 +1,16 @@
+package Uebungen;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Test");
+		
+		Config c = new Config();
+		ApplyMyConfig(c);
+		
+	}
+	
+	public static void ApplyMyConfig(Config myConfig) {
+		myConfig.LoadVar();
+	}
+}

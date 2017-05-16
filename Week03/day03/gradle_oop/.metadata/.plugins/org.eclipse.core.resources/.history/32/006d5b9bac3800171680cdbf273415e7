@@ -1,0 +1,115 @@
+package person_Pet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public final class Person extends Object implements IAnimal {
+	//fields
+	private String firstName;
+	private String lastName;
+	private int age;
+	private List pets = new ArrayList();
+	
+	//constructor
+	public Person(String firstName, String lastName, int age) {
+//		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+	}
+
+	// methods
+	public String getFirstName() {
+		return this.firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return this.lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public int getAge() {
+		return this.age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public void addPet(Pet pet){
+		pets.add(pet);
+	}
+	
+	@Override
+	public String speak() {
+		return "hello";
+	}
+	
+	public String getName() {
+		return this.firstName + " " + this.lastName;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+//		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + "]";
+		
+		StringBuilder strBuilder = new StringBuilder() // same as concatinating just more efficient
+		.append("name = ").append(this.firstName).append(", ")
+		.append("lastName = ").append(this.lastName).append(", ")
+     	.append("age ").append(this.age).append(", Pets: ");
+		
+		for (int i = 0; i < pets.size(); i++) {
+			
+			Object o = pets.get(i);
+			//Pet p = (Pet)o;
+			
+			strBuilder.append(pets.get(i).toString()).append(" - ");
+		}
+		
+		return strBuilder.toString();
+	}
+	
+	
+
+
+	public static void main(String[] args) {
+		
+		Person simona = new Person("Simona", "Mühlebach", 30);
+		Pet cat = new Pet("Garfield");
+		Pet dog = new Pet("Lassie");
+		Pet dog2 = new Pet("Fido");
+		
+		simona.addPet(cat);
+		simona.addPet(dog);
+		simona.addPet(dog2);
+		
+		
+		// print fields seperatly
+		System.out.println(simona.firstName);
+		System.out.println(simona.lastName);
+		System.out.println(simona.age);
+		
+		// change properties
+		simona.setFirstName("Susan");
+		simona.setLastName("Meier");
+		simona.setAge(60);
+		System.out.println(simona.getFirstName());
+		
+//		System.out.println(person.firstName);
+		
+		//print toString
+		System.out.println(simona.toString());
+		System.out.println(simona.getName());
+	}
+
+
+	
+	
+}
+
+
+

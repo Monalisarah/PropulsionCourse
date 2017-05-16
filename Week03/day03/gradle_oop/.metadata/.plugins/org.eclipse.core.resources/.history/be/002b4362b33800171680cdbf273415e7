@@ -1,0 +1,42 @@
+package person_Pet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Person simona = new Person("Simona", "Mühlebach", 30);
+//		Pet cat = new Pet(PetType.CAT, "Garfield");
+//		Pet dog = new Pet(PetType.DOG, "Lassie");
+//		Pet bird = new Pet(PetType.BIRD, "Fido");
+		Pet cat = new Cat("Garfield");
+		Pet dog = new Dog("Lassie");
+		Pet dog2 = new Dog("Shirley");
+		Pet bird = new Bird("Fido");
+		
+		simona.addPet(cat);
+		simona.addPet(dog);
+		simona.addPet(bird);
+		
+		System.out.println(cat.speak());
+		
+		// print fields seperatly
+		System.out.println(simona.getFirstName());
+		System.out.println(simona.getLastName());
+		System.out.println(simona.getAge());
+		
+		// change properties
+		simona.setFirstName("Susan");
+		simona.setLastName("Meier");
+		simona.setAge(60);
+		System.out.println(simona.getFirstName());
+		
+//		System.out.println(person.firstName);
+		
+		//print toString
+		System.out.println(simona);
+		System.out.println(simona.getName());
+		
+		Asiat asiat = new Asiat("Li", "Sun Choo", 25);
+		System.out.println(asiat);
+	}
+}
