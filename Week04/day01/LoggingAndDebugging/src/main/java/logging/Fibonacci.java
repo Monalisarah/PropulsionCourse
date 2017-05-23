@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 public class Fibonacci {
 
 //	private static final Logger logger = Logger.getLogger(Fibonacci.class.getName()); JUL Java Util Logging
-	private static final Logger logger = LogManager.getLogger(Fibonacci.class);
+	public static final Logger logger = LogManager.getLogger(Fibonacci.class);
 	/*
 	 * static int fibonacci(int n) { if (n == 0) { return 0; }
 	 * 
@@ -24,6 +24,7 @@ public class Fibonacci {
 	 * 
 	 * if (n == 0) { return 0; }
 	 * 
+	 * 
 	 * if (n == 1) { return 1; }
 	 * 
 	 * int[] fibonacciRow = new int[n + 1]; fibonacciRow[0] = 0; fibonacciRow[1]
@@ -36,12 +37,15 @@ public class Fibonacci {
 	 */
 
 	static int fibonacci(int n) {
+		logger.debug("n is {}", n);
 
 		if (n == 0) {
+			logger.trace("n is 0");
 			return 0;
 		}
 
 		if (n == 1) {
+			logger.trace("n is 1");
 			return 1;
 		}
 
@@ -50,12 +54,13 @@ public class Fibonacci {
 		fibonacciRow[1] = 1;
 
 		for (int i = 2; i <= n; i++) {
+			logger.trace("i is {}", i);
 
 			fibonacciRow[i % 3] = fibonacciRow[(i - 2) % 3] + fibonacciRow[(i - 1) % 3];
 		}
 
 //		logger.info("This is a log message");
-		logger.debug("Hello, Logging!");
+		logger.info("result is {}", fibonacciRow[n % 3]);
 		return fibonacciRow[n % 3];
 	}
 
@@ -79,5 +84,6 @@ public class Fibonacci {
 		// System.out.println(fibonacci(i));
 		// }
 		System.out.println(fibonacci(7));
+		
 	}
 }

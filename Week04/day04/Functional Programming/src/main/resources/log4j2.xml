@@ -6,8 +6,9 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="logging" level="trace" />
-		<Logger name="bank.service" level="trace" />
+		<Logger name="org.example" level="error" />
+		<Logger name="org.example.app" level="info" />
+		<Logger name="bank.service.BankService" level="info" />
 		<Root level="error">
 			<AppenderRef ref="Console" />
 		</Root>
