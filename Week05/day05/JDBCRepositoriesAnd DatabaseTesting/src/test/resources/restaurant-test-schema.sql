@@ -1,0 +1,12 @@
+DROP TABLE restaurant IF EXISTS;
+
+CREATE TABLE restaurant(
+
+ id INTEGER NOT NULL IDENTITY,
+ name VARCHAR(50) NOT NULL,
+ city VARCHAR(50) NOT NULL,
+ zip INTEGER NOT NULL
+ country VARCHAR(50) NOT NULL,
+ );
+
+ 

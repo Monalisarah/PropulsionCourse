@@ -1,0 +1,1 @@
+insert into restaurant(name, city, zip, country) values('Lilli', 'Zurich',8000, 'Switzerland');
