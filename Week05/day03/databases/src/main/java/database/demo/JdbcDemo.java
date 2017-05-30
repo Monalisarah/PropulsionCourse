@@ -40,8 +40,7 @@ public class JdbcDemo {
 		Integer numUsers = jdbcTemplate.queryForObject(sql, Integer.class);
 		System.out.println(numUsers);
 		
-		sql = "update users set age=22 WHERE id=11"
-				+ "";
+		sql = "update users set age=22 WHERE id=11";
 		Integer age1 = jdbcTemplate.update(sql);
 	
 		sql = "select age FROM users where id= 11";

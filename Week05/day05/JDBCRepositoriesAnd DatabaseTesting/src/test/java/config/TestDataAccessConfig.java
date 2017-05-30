@@ -21,7 +21,7 @@ public class TestDataAccessConfig {
 		return new EmbeddedDatabaseBuilder()
 				.setType(H2)
 				.generateUniqueName(true)
-				.addScript("test-schema.sql")
+				.addScript("restaurant-test-schema.sql")
 				.build();
 				
 	}

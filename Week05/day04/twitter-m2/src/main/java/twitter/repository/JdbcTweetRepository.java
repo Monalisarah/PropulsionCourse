@@ -4,12 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import twitter.domain.Tweet;

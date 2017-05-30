@@ -12,6 +12,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import config.TestDataAccessConfig;
+import restaurant.domain.Restaurant;
 
 
 @RunWith(SpringRunner.class)
@@ -27,11 +28,18 @@ public class RestaurantRepositoryTest {
 	@Sql(statements = "delete from restaurant")
 	@Sql("/test-data.sql")
 	public void save() throws Exception {
-	assertThat(restaurantRepository.count()).isEqualTo(1);
+		assertThat(restaurantRepository.count()).isEqualTo(1);
 	
 	}
 
-//	void save(Restaurant restaurant);
+	@Test
+	
+	@Sql("/test-data.sql")
+	public void findById(); throws Exception {
+		assertThat(restaurantRepository.findById(restaurantRepository.findAllByCity("Zurich").)).isEqualTo(restaurantRepository.findAllByCity("Zurich"));
+	
+	}
+
 //
 //	Restaurant findById(String id);
 //
@@ -45,3 +53,4 @@ public class RestaurantRepositoryTest {
 //
 //	void deleteById(Integer id);
 }
+
