@@ -36,7 +36,7 @@ public class RestaurantRepositoryTest {
 	
 	@Sql("/test-data.sql")
 	public void findById(); throws Exception {
-		assertThat(restaurantRepository.findById(restaurantRepository.findAllByCity("Zurich").)).isEqualTo(restaurantRepository.findAllByCity("Zurich"));
+		assertThat(restaurantRepository.findById(restaurantRepository.findAllByCity("Zurich"))).isEqualTo(restaurantRepository.findAllByCity("Zurich"));
 	
 	}
 
