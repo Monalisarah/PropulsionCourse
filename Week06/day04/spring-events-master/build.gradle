@@ -1,0 +1,132 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M4'
+		classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+    }
+}
+
+plugins {
+    id 'io.spring.dependency-management' version '0.6.1.RELEASE'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'com.github.ben-manes.versions' // gradle dependencyUpdates
+
+jar {
+    baseName = 'spring-events'
+    version = '1.0.0-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext.assertJVersion         = '3.6.2'
+ext.h2Version              = '1.4.193'
+ext.hibernateVersion       = '5.2.8.Final'
+ext.htmlunitVersion        = '2.23'
+ext.jacksonDateTimeVersion = '2.8.7'
+ext.jsonpathVersion        = '2.2.0'
+ext.junitJupiterVersion    = '5.0.0-M4'
+ext.junitPlatformVersion   = '1.0.0-M4'
+ext.lombokVersion          = '1.16.14'
+ext.seleniumVersion        = '2.52.0'
+ext.springBootVersion      = '1.5.3.RELEASE'
+ext.testNGVersion          = '6.11'
+
+// Special syntax for overriding spring-boot-dependencies
+// https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/1.5.3.RELEASE/spring-boot-dependencies-1.5.3.RELEASE.pom
+ext['hibernate.version']       = hibernateVersion
+ext['spring-security.version'] = '4.2.2.RELEASE'
+ext['spring.version']          = '5.0.0.M5'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+	jcenter() // for TestNG 6.9.11+
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonDateTimeVersion}")
+	compile("com.h2database:h2:${h2Version}")
+	compile("org.hibernate:hibernate-java8:${hibernateVersion}")
+	compile("org.projectlombok:lombok:${lombokVersion}")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
+	testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+	testCompile("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    testCompile("com.jayway.jsonpath:json-path:${jsonpathVersion}")
+    testCompile("net.sourceforge.htmlunit:htmlunit:${htmlunitVersion}")
+    testCompile("org.assertj:assertj-core:${assertJVersion}")
+    testCompile("org.seleniumhq.selenium:selenium-htmlunit-driver:${seleniumVersion}")
+    testCompile("org.testng:testng:${testNGVersion}")
+
+	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+}
+
+junitPlatform {
+	details 'tree'
+	// Do NOT run JUnit 4 tests with the standard Gradle test task.
+	enableStandardTestTask false
+	// Only run JUnit Jupiter tests with the JUnit Platform
+	filters.engines.include 'junit-jupiter'
+}
+
+task testNG(type: Test) {
+	description = 'Runs TestNG tests.'
+	useTestNG()
+	scanForTestClasses = false
+	include '**/*TestNgTests.class'
+	// Show STD_OUT & STD_ERR of the test JVM(s) on the console:
+	// testLogging.showStandardStreams = true
+	// forkEvery 1
+}
+
+test {
+	description = 'Runs JUnit 4 tests.'
+	dependsOn testNG
+	useJUnit()
+
+	scanForTestClasses = false
+	include '**/*Tests.class'
+	exclude '**/*TestNg*.*'
+	// Since we set scanForTestClasses to false, we need to filter out inner
+	// classes with the "$" pattern; otherwise, using -Dtest.single=MyTests to
+	// run MyTests by itself will fail if MyTests contains any inner classes.
+	exclude(["**/Abstract*.class", '**/*$*'])
+}
+
+task aggregateTestReports(type: TestReport) {
+	description = 'Aggregates JUnit 4 and TestNG test reports.'
+	destinationDir = test.reports.html.destination
+	reportOn test, testNG
+}
+
+check.dependsOn aggregateTestReports
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.5'
+}
