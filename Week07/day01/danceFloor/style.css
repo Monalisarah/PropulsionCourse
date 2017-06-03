@@ -5,6 +5,7 @@ h1{
 }
 
 .container{
+
   /*margin-left: auto;
   margin-right: auto;*/
   margin: auto;
@@ -13,3 +14,34 @@ h1{
   background-color: tomato;
 
 }
+
+.row{
+
+  float: left;
+  height: 20%;
+  width: 100%;
+  background-color: pink;
+}
+
+.square{
+  float: left;
+  height: 100%;
+  width: 20%;
+  background-color: white;
+}
+
+.square{
+  float: left;
+  height: 100%;
+  width: 20%;
+  background-color: RoyalBlue;
+}
+
+/*.active{
+  background-color: LightBlue;
+}*/
+
+
+/*.square:hover{
+  background-color: yellow;
+}*/
