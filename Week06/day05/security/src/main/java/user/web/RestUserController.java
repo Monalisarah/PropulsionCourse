@@ -65,7 +65,7 @@ public class RestUserController {
 
 	@PostMapping
 	public HttpEntity<Void> createUser(@RequestBody User postedUser) {
-		User savedUser = userService.save(postedUser);
+		User savedUser = userService.registerNewUser(postedUser);
 
 		// http://localhost:8080/users/
 		// http://localhost:8080/users/{id}
@@ -74,6 +74,7 @@ public class RestUserController {
 		UriComponents uriComponents = fromMethodCall(on(getClass()).retrieveUser(savedUser.getId())).build();
 
 		return ResponseEntity.created(uriComponents.encode().toUri()).build();
+		
 	}
 
 	@PutMapping("/{id}")

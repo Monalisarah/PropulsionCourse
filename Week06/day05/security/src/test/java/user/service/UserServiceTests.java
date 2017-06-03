@@ -23,6 +23,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,12 +43,14 @@ public class UserServiceTests {
 	}
 
 	@Test
+	@WithMockUser(roles= "USER")
 	public void save() {
 		userService.save(new User("Test", "User", 25));
 		assertThat(userService.findAll()).hasSize(4);
 	}
 
 	@Test
+	@WithMockUser(roles = "ADMIN")
 	public void deleteById() {
 		userService.deleteById(1L);
 		assertThat(userService.findAll()).hasSize(2);

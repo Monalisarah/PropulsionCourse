@@ -19,6 +19,7 @@ package user.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,18 +58,20 @@ public class DefaultUserService implements UserService {
 
 	@Transactional(readOnly = false)
 	@Override
+	@PreAuthorize("hasRole('ROLE_USER')")
 	public User save(User user) {
 		return this.userRepository.save(user);
 	}
 
 	@Transactional(readOnly = false)
 	@Override
-	public void registerNewUser(User user) {
-		this.userRepository.save(user);
+	public User registerNewUser(User user) {
+		return this.userRepository.save(user);
 	}
 
 	@Transactional(readOnly = false)
 	@Override
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void deleteById(Long id) {
 		this.userRepository.delete(id);
 	}

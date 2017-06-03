@@ -1,0 +1,15 @@
+*{box-sizing: border-box;}
+
+h1{
+  text-align: center;
+}
+
+.container{
+  /*margin-left: auto;
+  margin-right: auto;*/
+  margin: auto;
+  height: 600px;
+  width: 90%;
+  background-color: tomato;
+
+}
