@@ -1,12 +1,13 @@
 console.log('hello');
 
-
-
 function grid() {
   for (let i = 0; i < 5; i++) {
-    let $row = $("<div class= 'row'></div>");
+    let $row = $("<div class= 'row'>");
     for (let j = 0; j < 5; j++) {
-      $row.append("<div class= 'square'></div>")
+      let square = $("<div class= 'square'>").attr("id", i+1+ "-" +(j+1))
+      $row.append(square)
+
+      // $row.append("<div class= 'square'>").attr("id", i+1+ "-" +(j+1) );
     }
     $(".container").append($row);
   }
@@ -23,17 +24,20 @@ function grid() {
 grid();
 
 
-
+// let selected =
 $(".square").on('click', (event) => {
-  console.log('in da click');
-  $(event.currentTarget).toggleClass('active');
+    console.log('in da click');
+    $(event.currentTarget).toggleClass('active');
 });
 
+// console.log(selected);
 
-// // theorie cell und cell acive random dancing:
-// let squares = $('.square');
-// squares.on('click', (event) => {
-//     // ‘active’ greift auf css class zu
-//     console.log('in da click')
-//     $(event.currentTarget).toggleClass('active');
-// });
+
+
+
+
+$(document).on('keypress', (event) => {
+  if (event.key === 'w'){
+    console.log('in da keypress : '+ event.key);
+  }
+});
