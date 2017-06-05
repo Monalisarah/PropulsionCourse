@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- html shortcode ctrl & space -->
+<html <head>
+<meta charset="utf-8">
+<title>dance floor exercise grid</title>
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Dance Floor</h1>
+  </header>
+  <div class="container"></div>
+  <script>
+  // build grid in "container":
+  function createGrid() {
+    for (var rows = 0; rows < 5; rows++) {
+    	// jquery create a .row component:
+    	var $row = $("<div class = 'row'>");
+      for (var columns = 0; columns < 5; columns++) {
+        $row.append("<div class='square'></div>");
+        // instead of adding .squares to container add them to row
+      };
+      // add .row to .container
+      $(".container").append($row);
+    };
+    $(".square").width(100);
+    $(".square").height(100);
+  };
+  //call: 
+  createGrid();
+  </script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

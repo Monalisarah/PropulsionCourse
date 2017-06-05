@@ -5,7 +5,30 @@ h1{
 
 .container{
   margin: auto;
-  height: 900px;
+  height: 500px;
   width: 80%;
-  background-color: tomato;
+  background-color: antiquewhite;
+}
+
+.row{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: 18%;
+  width: 90%;
+  background-color: lightGreen;
+  border: 2px solid crimson;
+}
+
+.square{
+  margin: auto;
+  height: 100%;
+  width: 20%;
+  background-color: lightBlue;
+  border: 2px solid crimson;
+}
+
+
+.active{
+  background-color: coral;
 }

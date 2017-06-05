@@ -1,0 +1,44 @@
+*{box-sizing: border-box;
+	font-family: Verdana, sans-serif;
+}
+
+.body{
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+h1{
+	text-align: center;
+}
+
+.container{
+	margin: auto;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 90%;
+	background-color: black;	
+}
+
+.row{
+	margin: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	height: 100px;
+	background-color: black;
+}
+
+.square{
+	margin:0;
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	border: 2px solid black;	
+}
+/*.square:hover{
+	background-color: black;
+}*/
+
