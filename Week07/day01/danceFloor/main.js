@@ -13,19 +13,19 @@ function randomColor() {
   return color;
 };
 
-// let interval = setInterval(function () {
-//   let grid = $('.square');
-//   grid.each((index, cell) => {
-//     $(cell).css('background', randomColor());
-//   })
-//
-// }, 5000);
+let interval = setInterval(function () {
+  let grid = $('.square');
+  grid.each((index, cell) => {
+    $(cell).css('background', randomColor());
+  })
+
+}, 2000);
 
 
-// theorie cell und cell acive random dancing:
-let squares = $('.square');
-squares.on('click', (event) => {
-    // ‘active’ greift auf css class zu
-    console.log('in da click')
-    $(event.currentTarget).toggleClass('active');
-});
+// // theorie cell und cell acive random dancing:
+// let squares = $('.square');
+// squares.on('click', (event) => {
+//     // ‘active’ greift auf css class zu
+//     console.log('in da click')
+//     $(event.currentTarget).toggleClass('active');
+// });
