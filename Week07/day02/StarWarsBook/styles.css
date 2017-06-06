@@ -1,0 +1,8 @@
+.container {
+  background-color: lightBlue;
+}
+
+.column {
+  width: 25%;
+  background-color: antiquewhite;
+}
