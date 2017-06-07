@@ -1,0 +1,21 @@
+.wrapper {
+  overflow: hidden;
+  width: 70%;
+  margin: 100px auto;
+  height: 200px;
+  white-space: nowrap;
+  background-color: peachpuff;
+}
+
+.horizontal-scroll {
+  transform: translateX(-817px);
+  transition: all 1s ease;
+}
+.item {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-color: coral;
+  background-image: url('./image/photo-1422393462206-207b0fbd8d6b.jpeg');
+  background-size: 200px 200px;
+}
