@@ -1,8 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+/*html, body {
+  width: 100%;
+}*/
 .container {
   background-color: lightBlue;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .column {
   width: 25%;
   background-color: antiquewhite;
+}
+.column#starship{
+  background-color: coral;
+}
+
+.column#pilot{
+  background-color: crimson;
 }

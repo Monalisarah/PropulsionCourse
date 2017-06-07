@@ -30,4 +30,16 @@ const myready = () => {
   })
 }
 
-$(document).ready()
+//
+// async function myready(){
+//   const res = await fetch ('url');
+//   const data = await res.json();
+//   data.results.forEach((movie) => {
+//     const item = $('<li>').text(movie.title).addClass('movie');
+//     $('#movies').append(item);
+//   })
+// }
+//
+// $(document).ready(() =>{
+//   myready();
+// });
