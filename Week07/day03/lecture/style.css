@@ -1,0 +1,49 @@
+.cell {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+  /*// by default margin even though we do not set it:
+  you can applay margins with inline-block, with inline you can not*/
+  display: inline-block;
+  /*position: static; is the default*/
+  /*position where the element starts:*/
+  /*moves it relative to where it shoult be, does not affect the flow of the other elements
+  position relativ is relative to it self, to where it should be*/
+  position: relative;
+  top: 100px;
+  left: 100px;
+  /*takes the element out of the flow of the other elements position absolute to the first parent that has position relative
+  moves the element relative to the parent:
+  you have to define the position with top, left ...
+  you havet to put the position of the container to relative (parent) */
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  /*position fixed you remove it from the regular flow the other cells do not care anymore about that cell */
+  position: fixed;
+  /*removes it from the regular flow but still has some space there the other cells still care about that cell
+  you either float or use position, does not make sense to use both at the same time, the same with flexbox, if you use flexbox you will
+  not use position at the same time*/
+  float: left;
+
+
+}
+
+.container{
+  width: 70%;
+  margin: 50px auto;
+  /*position: relative;*/
+  white-space: nowrap;
+  overflow-x: hidden;
+
+}
+
+.horizontal-scroll{
+  /*moves the inner container to the right transform, where it was and what I want now, transition makes the transition
+  we need to decide how much to move it, the item, the whole window etc...you have to code it with if statements in javaScript*/
+  transform: translateX(200px);
+  /*the rules that you want some transition on, do not change immeditately,
+  just goes from one state to another smootly with a function
+  you can select all or only the transform function*/
+  transition: all 2s ease;
+}
