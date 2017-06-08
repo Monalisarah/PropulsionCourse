@@ -1,14 +1,29 @@
 import React, {Component} from 'react';
+import TodoItem from '../TodoItem';
 
 class TodoList extends Component {
-  render() {
-    const todos = ['Master JS', 'Learn React', 'Learn Redux'];
 
+  constructor(props){
+    super(props);
+      this.state = {
+        todos: ['Master JS', 'Learn React', 'Learn Redux']
+      };
+  //     setTimeout(() => {
+  //   this.setState({
+  //     todos: ['Master JS', 'Learn Redux']
+  //   });
+  // }, 3000);
+}
+
+
+  render() {
+
+    console.log('TodoList Props: ', this.props);
     return (
       <ul>
         {
-          todos.map((todo, index) => {
-            return <li key={index}>{ todo }</li>;
+          this.state.todos.map((element, index) => {
+            return <TodoItem key={ index } todo={ element }/>;
           })
         }
       </ul>
