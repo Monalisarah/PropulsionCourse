@@ -19,11 +19,18 @@ handleSubmit = () => {}
 
 handleEmail = (e) => {
   const email = e.currentTarget.value;
-  console.log(email);
   this.setState({
     email: email
-  })
+  });
 }
+
+handlePassword = (e) => {
+  const password = e.currentTarget.value;
+  this.setState({
+    password: password
+  });
+}
+
 
 
   render () {
