@@ -21,3 +21,10 @@
 // redirect the user to /feed after loginUser
 // Fetch the feed in the component
 // this.props.history push in the new Component
+
+// in actions.js:
+// create and dispatch an action inside the getFeed
+
+// in da Reducer:
+// create new feedReducer
+// handle the action
