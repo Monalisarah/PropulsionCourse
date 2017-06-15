@@ -61,6 +61,8 @@ export const getFeed = () => (dispatch, getState) => {
   fetch('https://propulsion-blitz.herokuapp.com/api/feed', config)
     .then(res => res.json())
     .then(feed => {
+      feed.forEach( => )
+      //.... not finished!
       dispatch({
         type: 'GETFEED',
         feed: feed,

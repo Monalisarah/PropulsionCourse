@@ -7,7 +7,7 @@ class Feed extends Component {
 
   componentDidMount = (e) => {
     console.log('in da componentDidMount');
-    this.props.dispatch(getFeed());
+    const feed = this.props.dispatch(getFeed());
   }
 
     render() {
