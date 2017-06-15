@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 console.log('logging store:' , store);
 
 ReactDOM.render(
-  <Provider store = {store}>
+  <Provider store={store}>
     <Router>
       <Switch>
         <Route exact path="/" component={ App } />
