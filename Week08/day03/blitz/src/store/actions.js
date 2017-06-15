@@ -3,7 +3,17 @@
 // is a function which takes two parameters (email, password) and returns another function which also expects two parameters (dispatch, getState)
 // we pass the email and password when calling the function,
 // dispatch, getState is from the middleware thunk (like .map(element, index)) it takes two parameters
-const loginUser = (email, password) => (dispatch, getState) => {
+// fetch when you
+
+// ES5:
+// const loginUser = function(email, password) {
+//   return function((dispatch, getState) {
+//
+//   })
+// }
+// ES6:
+
+export const loginUser = (email, password) => (dispatch, getState) => {
 
   const body = {
     email: email,
@@ -20,10 +30,11 @@ const loginUser = (email, password) => (dispatch, getState) => {
     body: JSON.stringify(body)
   };
 
-  fetch('https://propulsion-blitz.herokuapp.com/api/login', config)
+  //fetch is an asynchronous function that returns a promise
+  return fetch('https://propulsion-blitz.herokuapp.com/api/login', config)
     .then(res => res.json())
     .then(user => {
-      console.log('in da user', user);
+      // console.log('in da user', user);
       // 2. dispatch save the information of the user to the redux state
       dispatch({
         type: 'GETUSER',
@@ -33,4 +44,23 @@ const loginUser = (email, password) => (dispatch, getState) => {
 }
 
 
-export default loginUser;
+export const getFeed = () => (dispatch, getState) => {
+
+  const currentUser = getState().currentUser;
+  // console.log("state: ", getState());
+
+  const header = new Headers({
+   Authorization: `Bearer ${currentUser.token}`
+  });
+
+  const config = {
+    method: 'GET',
+    headers: header,
+  }
+
+  fetch('https://propulsion-blitz.herokuapp.com/api/feed', config)
+    .then(res => res.json())
+    .then(feed => {
+      // console.log('logging feed in getFeed', feed);
+    })
+}

@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import loginUser from '../../store/actions.js';
+import {loginUser, getFeed} from '../../store/actions.js';
+import {withRouter} from 'react-router';
 
+
+//Login is a child of App
 class Login extends Component {
 
   constructor(props) {
@@ -19,8 +22,16 @@ class Login extends Component {
     e.preventDefault();
     // 1. dispatch this.props is an Object
     this.props.dispatch(loginUser(this.state.email, this.state.password))
+    .then(() => {
+      this.props.history.push('/feed');
+    })
+    // .then(() => {
+    //   this.props.dispatch(getFeed())
+    //   });
+  };
 
-    //
+
+    // loginUser now in actions.js
     // const body = {
     //   email: this.state.email,
     //   password: this.state.password
@@ -39,20 +50,9 @@ class Login extends Component {
     // .then(user => {
     //
     // })
-  };
 
-  // fake19@email.com
-  // password
-  // do the fetch
-  // method: POST
-  // body: send email and password, with JSON.stringify
-  // header -> 'Content-Type': 'application/json'
-  // res.json()
-  // recieve a user
-  // store this user in redux state:
-  // create an action
-  // dispatch the action
-  // handle the action in the reducer
+
+
 
   handleEmail = (e) => {
     const email = e.currentTarget.value;
@@ -77,4 +77,5 @@ class Login extends Component {
   }
 }
 
-export default connect()(Login)
+export default withRouter(connect()(Login));
+// withRouter is connecting the login component to the route

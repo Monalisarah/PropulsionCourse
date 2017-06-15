@@ -1,0 +1,21 @@
+{
+  "name": "live-trivial",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "install": "^0.10.1",
+    "npm": "^5.0.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

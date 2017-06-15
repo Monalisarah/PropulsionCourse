@@ -8,7 +8,7 @@ import Login from '../Login'
 
 class App extends Component {
   render() {
-    console.log('App-log:', this.props);
+    // console.log('connection to state in App (each component has a this.props):', this.props);
     return (
       <div className="App">
         <div className="App-header">
@@ -27,4 +27,8 @@ const mapStateToProps = (state) => {
  // write map function and return the part of the state that you need eg. state.questions
  return state;
 }
+
+// the dispatch property (in this.props) is available when you connect:
+// export default connect()(App);
+// if we also want to read from the Redux state we have to connect in this way:
 export default connect(mapStateToProps)(App);

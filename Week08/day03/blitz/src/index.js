@@ -7,15 +7,17 @@ import './index.css';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Feed from './components/Feed';
 
 
-console.log('logging store:' , store);
+// console.log('logging store:' , store);
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={ App } />
+        <Route exact path="/" component={App} />
+        <Route exact path="/feed" component={Feed} />
       </Switch>
     </Router>
   </Provider>,
