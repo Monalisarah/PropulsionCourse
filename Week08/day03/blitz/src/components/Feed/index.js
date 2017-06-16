@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getFeed} from '../../store/actions.js';
+import FeedItem from '../FeedItem';
 
 
 class Feed extends Component {
@@ -11,14 +12,19 @@ class Feed extends Component {
   }
 
     render() {
-      // console.log('in da Feed', this.props.feed);
+      // console.log('in da Feed', this.props.feeds);
       return (
         <div>
-            HellofromFeed
+            Feeds:
             <ul>
-              {this.props.feeds.map((element, index) => {
-                return <li key= {index}>{element.content}</li>
-              })}
+              {
+                this.props.feeds.map((blitz) => {
+                  return <FeedItem
+                    key={blitz._id}
+                    blitz={blitz.content}
+                    user={blitz._user.username}/>
+                })
+              }
             </ul>
        </div>
       );
