@@ -27,7 +27,7 @@ class Feed extends Component {
 
 
 const mapStateToProps = (state) => {
-  // console.log('in da map satee to props', feed);
+  // console.log('in da map satee to props', feeds);
   return {
     feeds: state.feedReducer
   }

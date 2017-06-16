@@ -8,7 +8,9 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Feed from './components/Feed';
+import {loginFromLocalStorage} from './store/actions.js';
 
+store.dispatch(loginFromLocalStorage());
 
 // console.log('logging store:' , store);
 

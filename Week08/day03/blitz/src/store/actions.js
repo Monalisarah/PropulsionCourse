@@ -34,7 +34,8 @@ export const loginUser = (email, password) => (dispatch, getState) => {
   return fetch('https://propulsion-blitz.herokuapp.com/api/login', config)
     .then(res => res.json())
     .then(user => {
-      // console.log('in da user', user);
+      localStorage.setItem('token', user.token)
+      // localStorage.setItem('user', JSON.stringify(user));
       // 2. dispatch save the information of the user to the redux state
       dispatch({
         type: 'GETUSER',
@@ -43,6 +44,23 @@ export const loginUser = (email, password) => (dispatch, getState) => {
     })
 }
 
+export const loginFromLocalStorage = () => (dispatch) => {
+  const token = localStorage.getItem('token');
+  // get parse it to become a JavaScript object again
+  // loggedUser = JSON.parse(loggedUser);
+  const user = {
+    token: token,
+  };
+
+  dispatch({
+    type: 'GETUSER',
+    user: user,
+  })
+
+}
+
+
+
 
 export const getFeed = () => (dispatch, getState) => {
 
@@ -50,7 +68,7 @@ export const getFeed = () => (dispatch, getState) => {
   // console.log("state: ", getState());
 
   const header = new Headers({
-   Authorization: `Bearer ${currentUser.token}`
+    Authorization: `Bearer ${currentUser.token}`
   });
 
   const config = {
@@ -61,10 +79,10 @@ export const getFeed = () => (dispatch, getState) => {
   fetch('https://propulsion-blitz.herokuapp.com/api/feed', config)
     .then(res => res.json())
     .then(feeds => {
-        dispatch({
-          type: 'GETFEED',
-          feeds: feeds,
-        })
+      dispatch({
+        type: 'GETFEED',
+        feeds: feeds,
+      })
     })
-      // create and dispatch an action
+  // create and dispatch an action
 }
