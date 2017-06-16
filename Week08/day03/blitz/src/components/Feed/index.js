@@ -6,22 +6,32 @@ import {getFeed} from '../../store/actions.js';
 class Feed extends Component {
 
   componentDidMount = (e) => {
-    console.log('in da componentDidMount');
+    // console.log('in da componentDidMount');
     const feed = this.props.dispatch(getFeed());
   }
 
     render() {
-      console.log(this.props);
+      // console.log('in da Feed', this.props.feed);
       return (
         <div>
-          <div>HellofromFeed</div>
+            HellofromFeed
+            <ul>
+              {this.props.feeds.map((element, index) => {
+                return <li key= {index}>{element.content}</li>
+              })}
+            </ul>
        </div>
       );
     }
   }
 
 
+const mapStateToProps = (state) => {
+  // console.log('in da map satee to props', feed);
+  return {
+    feeds: state.feedReducer
+  }
+}
 
 
-
-export default connect()(Feed);
+export default connect(mapStateToProps)(Feed);
